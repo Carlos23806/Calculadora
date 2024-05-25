@@ -64,7 +64,6 @@ body {
     width: 9px; /* Ancho de la barra de desplazamiento vertical */
     height: 9px; /* Altura de la barra de desplazamiento horizontal */
 }
-
 /* Estilizar el pulgar de la barra de desplazamiento */
 .pantalla::-webkit-scrollbar-thumb {
     background-color: var(--colorNumeros); /* Color del pulgar de la barra de desplazamiento */

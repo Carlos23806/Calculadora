@@ -1,0 +1,173 @@
+/* Definición de variables CSS para colores */
+:root {
+    --colorBody: #ffffff; /* Color del fondo del cuerpo */
+    --colorCalculadora: #2d7caaa1; /* Color del fondo de la calculadora */
+    --colorPantalla: #ffffff; /* Color del fondo de la pantalla */
+    --colorBotones: #0a4874; /* Color de los botones de operaciones */
+    --colorNumeros: #0c8ae3; /* Color de los botones de números */
+    --colorTransicion: rgb(138, 177, 222); /* Color de transición al hacer clic */
+    --colorTexto: #fff; /* Color del texto en los botones */
+}
+
+/* Resetear márgenes y padding para todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ajustar el tamaño del borde y padding dentro del tamaño total del elemento */
+    font-family: sans-serif; /* Fuente predeterminada */
+}
+
+/* Estilo del cuerpo */
+body {
+    display: flex; /* Usar un contenedor flex para el diseño */
+    min-height: 100vh; /* Altura mínima de la ventana gráfica */
+    background: radial-gradient(circle, #20aad8, #0c8ae3); /* Fondo con gradiente radial */
+    justify-content: space-evenly; /* Espacio igual entre elementos hijos */
+    align-items: center; /* Alinear elementos en el centro verticalmente */
+}
+
+/* Estilo del contenedor de la calculadora */
+.calculadora {
+    display: grid; /* Usar diseño de cuadrícula */
+    height: 250px; /* Altura de la calculadora */
+    width: 200px; /* Anchura de la calculadora */
+    border-radius: 20px; /* Bordes redondeados */
+    background: var(--colorCalculadora); /* Color de fondo de la calculadora */
+    padding: .8rem; /* Relleno interno */
+    grid-template-areas: 
+        "pantalla pantalla pantalla pantalla"
+        "Limpiar botonEliminar botonD botonM"
+        "boton7 boton8 boton9 botonR"
+        "boton4 boton5 boton6 botonS"
+        "boton1 boton2 boton3 botonIgual"
+        "boton0 boton0 botonP botonIgual";
+    /* Definición de áreas de cuadrícula */
+    gap: 3px; /* Espacio entre los elementos de la cuadrícula */
+}
+
+/* Estilo de la pantalla de la calculadora */
+.pantalla {
+    background: var(--colorPantalla); /* Color de fondo de la pantalla */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 0 10px; /* Relleno interno */
+    grid-area: pantalla; /* Ubicación en el área de la cuadrícula */
+    max-height: 40px; /* Altura máxima de la pantalla */
+    max-width: 10.9rem; /* Anchura máxima de la pantalla */
+    text-align: right; /* Alinear el texto a la derecha */
+    align-content: center; /* Alinear contenido en el centro */
+    color: var(--colorBotones); /* Color del texto en la pantalla */
+    font-weight: 600; /* Grosor de la fuente */
+    overflow:auto; /* Ocultar contenido desbordante */
+}
+/* Estilizar la barra de desplazamiento */
+.pantalla::-webkit-scrollbar {
+    width: 9px; /* Ancho de la barra de desplazamiento vertical */
+    height: 9px; /* Altura de la barra de desplazamiento horizontal */
+}
+
+/* Estilizar el pulgar de la barra de desplazamiento */
+.pantalla::-webkit-scrollbar-thumb {
+    background-color: var(--colorNumeros); /* Color del pulgar de la barra de desplazamiento */
+    border-radius: 10px; /* Radio del borde del pulgar de la barra de desplazamiento */
+    border: 3px solid var(--colorPantalla); /* Borde del pulgar de la barra de desplazamiento */
+}
+/* Estilizar la pista de la barra de desplazamiento */
+.pantalla::-webkit-scrollbar-track {
+    background: var(--colorPantalla); /* Color de la pista de la barra de desplazamiento */
+    border-radius: 10px; /* Radio del borde de la pista de la barra de desplazamiento */
+}
+/* Estilo general de los botones */
+.boton {
+    background: var(--colorNumeros); /* Color de fondo de los botones */
+    border: none; /* Sin borde */
+    border-radius: 5%; /* Bordes redondeados */
+    transition: .10s; /* Transición rápida al hacer clic */
+    color: var(--colorTexto); /* Color del texto de los botones */
+    cursor: pointer; /* Cambiar cursor a puntero al pasar sobre los botones */
+}
+
+/* Estilo de los botones cuando están activos (clic) */
+.boton:active {
+    background: var(--colorTransicion); /* Color de fondo durante la transición */
+}
+
+/* Estilos específicos para los botones de operaciones */
+#Limpiar {
+    grid-area: Limpiar; /* Ubicación en la cuadrícula */
+    background: var(--colorBotones); /* Color de fondo */
+}
+
+#botonEliminar {
+    grid-area: botonEliminar; /* Ubicación en la cuadrícula */
+    background: var(--colorBotones); /* Color de fondo */
+}
+
+#botonD {
+    grid-area: botonD; /* Ubicación en la cuadrícula */
+    background: var(--colorBotones); /* Color de fondo */
+}
+
+#botonM {
+    grid-area: botonM; /* Ubicación en la cuadrícula */
+    background: var(--colorBotones); /* Color de fondo */
+}
+
+#botonS {
+    grid-area: botonS; /* Ubicación en la cuadrícula */
+    background: var(--colorBotones); /* Color de fondo */
+}
+
+#botonR {
+    grid-area: botonR; /* Ubicación en la cuadrícula */
+    background: var(--colorBotones); /* Color de fondo */
+}
+
+#botonIgual {
+    grid-area: botonIgual; /* Ubicación en la cuadrícula */
+    background: var(--colorBotones); /* Color de fondo */
+}
+
+/* Estilos para los botones de números */
+#boton9 {
+    grid-area: boton9; /* Ubicación en la cuadrícula */
+}
+
+#boton8 {
+    grid-area: boton8; /* Ubicación en la cuadrícula */
+}
+
+#boton7 {
+    grid-area: boton7; /* Ubicación en la cuadrícula */
+}
+
+#boton6 {
+    grid-area: boton6; /* Ubicación en la cuadrícula */
+}
+
+#boton5 {
+    grid-area: boton5; /* Ubicación en la cuadrícula */
+}
+
+#boton4 {
+    grid-area: boton4; /* Ubicación en la cuadrícula */
+}
+
+#boton3 {
+    grid-area: boton3; /* Ubicación en la cuadrícula */
+}
+
+#boton2 {
+    grid-area: boton2; /* Ubicación en la cuadrícula */
+}
+
+#boton1 {
+    grid-area: boton1; /* Ubicación en la cuadrícula */
+}
+
+#boton0 {
+    grid-area: boton0; /* Ubicación en la cuadrícula */
+}
+
+#botonP {
+    grid-area: botonP; /* Ubicación en la cuadrícula */
+}
